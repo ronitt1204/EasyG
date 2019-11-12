@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
             data.put("born", "1989")
 
             // Add a new document with a generated ID
-            db.collection("members")
+            db.collection("data")
                 .add(data)
                 .addOnSuccessListener { documentReference ->
                     Toast.makeText(this,
