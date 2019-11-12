@@ -10,76 +10,51 @@ import kotlinx.android.synthetic.main.activity_contact.*
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 
 class MainActivity : AppCompatActivity() {
 
-    val RC_SIGN_IN = 1
+    var db = FirebaseFirestore.getInstance()
+
+    override fun onStart() {
+        super.onStart()
+
+        // check for authenticated user
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user == null) {
+            val intent = Intent(applicationContext, SignInActivity::class.java)
+            startActivity(intent)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
-            // Choose authentication providers
-            val providers = arrayListOf(
-                AuthUI.IdpConfig.EmailBuilder().build(),
-
-                AuthUI.IdpConfig.GoogleBuilder().build()
-            )
-
-// Create and launch sign-in intent
-            startActivityForResult(
-                AuthUI.getInstance()
-                    .createSignInIntentBuilder()
-                    .setAvailableProviders(providers)
-                    .build(),
-                RC_SIGN_IN
-            )
-
-        }
-
-        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-            super.onActivityResult(requestCode, resultCode, data)
-
-            if (requestCode == RC_SIGN_IN) {
-                val response = IdpResponse.fromResultIntent(data)
-
-                if (resultCode == Activity.RESULT_OK) {
-                    // Successfully signed in
-                    val user = FirebaseAuth.getInstance().currentUser
-                    // ...
-                } else {
-                    // Sign in failed. If response is null the user canceled the
-                    // sign-in flow using the back button. Otherwise check
-                    // response.getError().getErrorCode() and handle the error.
-                    // ...
-                }
-            }
-
-
-
-         home.setOnClickListener() {
+            home.setOnClickListener() {
                 setContentView(R.layout.activity_main)
             }
 
-        shop.setOnClickListener() {
-            setContentView(R.layout.activity_shop)
-        }
+            shop.setOnClickListener() {
+                setContentView(R.layout.activity_shop)
+            }
             aboutUs.setOnClickListener() {
                 setContentView(R.layout.activity_about)
             }
-                contact.setOnClickListener {
-                    setContentView(R.layout.activity_contact)
-                }
+            contact.setOnClickListener {
+                setContentView(R.layout.activity_contact)
+            }
 
-
-
-
-
-
-
-
+        logout.setOnClickListener {
+            // log user out
+            AuthUI.getInstance()
+                .signOut(this)
+                .addOnCompleteListener {
+                    // redirect to SignInActivity
+                    val intent = Intent(applicationContext, MainActivity::class.java)
+                    startActivity(intent)
+                } }
 
     }
+
 
 }
