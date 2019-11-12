@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".shop">
+
 
 
     <ImageView
@@ -15,30 +17,72 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.052"
+        app:layout_constraintVertical_bias="0.022"
         app:srcCompat="@drawable/heading_contact" />
 
-    <ImageView
-        android:id="@+id/backgroundImageView"
-        android:layout_width="357dp"
-        android:layout_height="463dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.462"
-        app:srcCompat="@drawable/background" />
-
     <ImageButton
-        android:id="@+id/home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/homeContact"
+        android:layout_width="82dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="164dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.948"
-        app:srcCompat="@drawable/button_home" />
+        app:layout_constraintVertical_bias="0.993"
+        app:srcCompat="@drawable/homecontact" />
+
+    <TextView
+        android:id="@+id/ronitt"
+        android:layout_width="245dp"
+        android:layout_height="30dp"
+        android:background="#FCFCFC"
+        android:text="Store Manager: Ronitt Goswami"
+        android:textColor="@color/design_default_color_primary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.146" />
+
+    <TextView
+        android:id="@+id/phoneNumber"
+        android:layout_width="245dp"
+        android:layout_height="30dp"
+        android:background="#C7DCF0"
+        android:text="Call: +1 437-990-2709                                                           "
+        android:textColor="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.207" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="245dp"
+        android:layout_height="30dp"
+        android:background="#C7DCF0"
+        android:text="Email: ronitt.goswami@MyGeorgian.ca"
+        android:textColor="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.276" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="183dp"
+        android:layout_height="132dp"
+        android:text="Address: 206 Cardinal Street, Barrie, ON, L4M6G8"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.81" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

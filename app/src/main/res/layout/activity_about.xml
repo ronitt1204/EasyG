@@ -4,32 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".shop">
 
-
     <ImageView
-        android:id="@+id/backgroundImageView"
-        android:layout_width="323dp"
-        android:layout_height="424dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.429"
-        app:srcCompat="@drawable/background" />
-
-    <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/imageView3"
         android:layout_width="315dp"
         android:layout_height="58dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.445"
+        app:layout_constraintHorizontal_bias="0.441"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062"
+        app:layout_constraintVertical_bias="0.022"
         app:srcCompat="@drawable/heading_about" />
 
+    <TextView
+        android:id="@+id/intro"
+        android:layout_width="397dp"
+        android:layout_height="275dp"
+        android:text="Easy Grocery is an online grocery shopping app using which people can do their grocery shopping by using their mobile phones as per their convinience. Secondly, it has a very unique feature that you can check the aisle of an item in the store so that you don't have to roam aorund in the store looking for things you need."
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.521"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.189" />
 
-
+    <TextView
+        android:id="@+id/founded"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Founded: 2019"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.746" />
 </androidx.constraintlayout.widget.ConstraintLayout>

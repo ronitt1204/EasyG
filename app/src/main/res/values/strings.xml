@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">EasyGrocery</string>
+    <string name="app_name">Easy Grocery</string>
+    <string name="title_activity_tryy">tryy</string>
 </resources>
+
