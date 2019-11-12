@@ -4,7 +4,10 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_about.*
+import kotlinx.android.synthetic.main.activity_shop.*
 import kotlinx.android.synthetic.main.activity_contact.*
 
 import com.firebase.ui.auth.AuthUI
@@ -30,8 +33,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
             home.setOnClickListener() {
-                setContentView(R.layout.activity_main)
+                //setContentView(R.layout.activity_main)
+                val i = Intent(applicationContext, MainActivity::class.java)
+                startActivity(i)
             }
 
             shop.setOnClickListener() {
@@ -53,6 +60,32 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(applicationContext, MainActivity::class.java)
                     startActivity(intent)
                 } }
+
+
+
+        save.setOnClickListener() {
+            // Create a new user with a first and last name
+            val data = HashMap<String, Any>()
+            data.put("first", "Another")
+            data.put("last", "Person")
+            data.put("born", "1989")
+
+            // Add a new document with a generated ID
+            db.collection("members")
+                .add(data)
+                .addOnSuccessListener { documentReference ->
+                    Toast.makeText(this,
+                        "DocumentSnapshot added with ID: " + documentReference.id,
+                        Toast.LENGTH_LONG).show()
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(this, e.message, Toast.LENGTH_LONG).show()
+                }
+        }
+
+
+
+
 
     }
 
