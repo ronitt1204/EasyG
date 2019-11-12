@@ -30,14 +30,26 @@
         app:layout_constraintVertical_bias="0.865"
         app:srcCompat="@drawable/save" />
 
-    <EditText
-        android:id="@+id/catagory"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+<!--    <EditText-->
+<!--        android:id="@+id/item"-->
+<!--        android:hint="@string/item"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="104dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:importantForAutofill="no" />-->
+
+<!--    <Spinner-->
+<!--        android:id="@+id/catagory_list"-->
+<!--        android:entries="@array/catagories"-->
+<!--        android:layout_width="385dp"-->
+<!--        android:layout_height="27dp"-->
+<!--        android:layout_marginTop="184dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/imageView" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

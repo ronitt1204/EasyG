@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_about.*
@@ -35,6 +36,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
+
+
+
+        view.setOnClickListener(){
+            setContentView(R.layout.activity_item)
+        }
+
             home.setOnClickListener() {
                 setContentView(R.layout.activity_main)
 //                val i = Intent(applicationContext, MainActivity::class.java)
@@ -51,23 +59,33 @@ class MainActivity : AppCompatActivity() {
                 setContentView(R.layout.activity_contact)
             }
         save.setOnClickListener() {
-            // Create a new user with a first and last name
-            val data = HashMap<String, Any>()
-            data.put("first", "Another")
-            data.put("last", "Person")
-            data.put("born", "1989")
+            // get the user inputs
+            val name = item.text.toString().trim()
 
-            // Add a new document with a generated ID
-            db.collection("data")
-                .add(data)
-                .addOnSuccessListener { documentReference ->
-                    Toast.makeText(this,
-                        "DocumentSnapshot added with ID: " + documentReference.id,
-                        Toast.LENGTH_LONG).show()
-                }
-                .addOnFailureListener { e ->
-                    Toast.makeText(this, e.message, Toast.LENGTH_LONG).show()
-                }
+            // validate name input
+            if (TextUtils.isEmpty(name)) {
+                Toast.makeText(this, "Item Name is Required", Toast.LENGTH_LONG).show()
+            } else {
+                // store selected Item
+                val catagory = catagory_list.selectedItem.toString()
+
+                // get new document with unique id
+                val tbl = db.collection("items")
+                val id = tbl.document().getId()
+
+                // create and populate new Item object
+                val item = Item(id, name, catagory, url = null)
+
+                // save to the db
+                tbl.document(id).set(item)
+
+                // clean up
+                //item.setText("")
+                catagory_list.setSelection(0)
+                Toast.makeText(this, "Item Added", Toast.LENGTH_LONG).show()
+            }
+
+
         }
 
         logout.setOnClickListener {
@@ -79,12 +97,7 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(applicationContext, MainActivity::class.java)
                     startActivity(intent)
                 } }
-
-
-
-
-
-    }
+            }
 
 
 }

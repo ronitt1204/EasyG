@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">Easy Grocery</string>
-    <string name="title_activity_tryy">tryy</string>
+    <string name="item">Enter Item Name</string>
+    <array name="catagories">
+        <item name="dairy_products">Dairy Products</item>
+        <item name="meat">Meat</item>
+        <item name="fruits">Fruits</item>
+        <item name="veggies">Veggies</item>
+    </array>
 </resources>
 

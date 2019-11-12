@@ -6,6 +6,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import androidx.core.app.ComponentActivity.ExtraData
 import androidx.core.content.ContextCompat.getSystemService
 import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+import android.text.TextUtils
 import kotlinx.android.synthetic.main.activity_main.*
 import androidx.annotation.NonNull
 import com.google.android.gms.tasks.OnFailureListener
@@ -25,27 +26,34 @@ class shop : AppCompatActivity() {
         setContentView(R.layout.activity_shop)
 
 
-        saves.setOnClickListener() {
-            // Create a new user with a first and last name
-            val data = HashMap<String, Any>()
-            data.put("first", "Another")
-            data.put("last", "Person")
-            data.put("born", "1989")
-
-            // Add a new document with a generated ID
-            db.collection("data")
-                .add(data)
-                .addOnSuccessListener { documentReference ->
-                    Toast.makeText(this,
-                        "DocumentSnapshot added with ID: " + documentReference.id,
-                        Toast.LENGTH_LONG).show()
-                }
-                .addOnFailureListener { e ->
-                    Toast.makeText(this, e.message, Toast.LENGTH_LONG).show()
-                }
-        }
-
-
-
+//        saves.setOnClickListener() {
+//            // get the user inputs
+//            val name = item.text.toString().trim()
+//
+//            // validate name input
+//            if (TextUtils.isEmpty(name)) {
+//                Toast.makeText(this, "Item Name is Required", Toast.LENGTH_LONG).show()
+//            } else {
+//                // store selected Item
+//                val catagory = catagory_list.selectedItem.toString()
+//
+//                // get new document with unique id
+//                val tbl = db.collection("items")
+//                val id = tbl.document().getId()
+//
+//                // create and populate new Item object
+//                val item = Item(id, name, catagory)
+//
+//                // save to the db
+//                tbl.document(id).set(item)
+//
+//                // clean up
+//                //item.setText("")
+//                catagory_list.setSelection(0)
+//                Toast.makeText(this, "Item Added", Toast.LENGTH_LONG).show()
+//            }
+//
+//
+//        }
     }
 }
