@@ -36,9 +36,9 @@ class MainActivity : AppCompatActivity() {
 
 
             home.setOnClickListener() {
-                //setContentView(R.layout.activity_main)
-                val i = Intent(applicationContext, MainActivity::class.java)
-                startActivity(i)
+                setContentView(R.layout.activity_main)
+//                val i = Intent(applicationContext, MainActivity::class.java)
+//                startActivity(i)
             }
 
             shop.setOnClickListener() {
@@ -50,19 +50,6 @@ class MainActivity : AppCompatActivity() {
             contact.setOnClickListener {
                 setContentView(R.layout.activity_contact)
             }
-
-        logout.setOnClickListener {
-            // log user out
-            AuthUI.getInstance()
-                .signOut(this)
-                .addOnCompleteListener {
-                    // redirect to SignInActivity
-                    val intent = Intent(applicationContext, MainActivity::class.java)
-                    startActivity(intent)
-                } }
-
-
-
         save.setOnClickListener() {
             // Create a new user with a first and last name
             val data = HashMap<String, Any>()
@@ -82,6 +69,16 @@ class MainActivity : AppCompatActivity() {
                     Toast.makeText(this, e.message, Toast.LENGTH_LONG).show()
                 }
         }
+
+        logout.setOnClickListener {
+            // log user out
+            AuthUI.getInstance()
+                .signOut(this)
+                .addOnCompleteListener {
+                    // redirect to SignInActivity
+                    val intent = Intent(applicationContext, MainActivity::class.java)
+                    startActivity(intent)
+                } }
 
 
 

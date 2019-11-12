@@ -46,9 +46,10 @@ class SignInActivity : AppCompatActivity() {
                 val user = FirebaseAuth.getInstance().currentUser
 
                 // redirect to MainActivity
-                //val intent = Intent(applicationContext, MainActivity::class.java)
-                //startActivity(intent)
-                setContentView(R.layout.activity_main)
+                val intent = Intent(applicationContext, MainActivity::class.java)
+                startActivity(intent)
+                //setContentView(R.layout.activity_main)
+
             } else {
                 // Sign in failed. If response is null the user canceled the
                 // sign-in flow using the back button. Otherwise check

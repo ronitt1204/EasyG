@@ -17,6 +17,7 @@ class contact : AppCompatActivity() {
             homeContact.setOnClickListener() {
                 val i = Intent(applicationContext, MainActivity::class.java)
                 startActivity(i)
+                finish()
 
             }
         }
