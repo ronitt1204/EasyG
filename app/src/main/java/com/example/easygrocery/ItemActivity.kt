@@ -98,7 +98,7 @@ class ItemActivity : AppCompatActivity() {
                 val view = LayoutInflater.from(parent.context).inflate(R.layout.item_catagories, parent, false)
                 return ItemViewHolder(view)
             }
-
+  
 
 
     }

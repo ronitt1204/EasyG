@@ -75,6 +75,7 @@ class MainActivity : AppCompatActivity() {
 
                 // create and populate new Item object
                 val item = Item(id, name, catagory, url = null)
+                
 
                 // save to the db
                 tbl.document(id).set(item)
